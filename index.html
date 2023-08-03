@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"><!DOCTYPE html>
   <title>AlgoTech Brands</title>
   <style>
     body {
@@ -18,6 +17,10 @@
       color: #fff;
       padding: 10px;
       text-align: center;
+    }
+
+    .logo img {
+      max-width: 100px; /* Adjust the size of the logo */
     }
 
     .brand-container {
@@ -41,42 +44,52 @@
       height: auto;
     }
 
-    /* Style the anchor tags */
-    .brand a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
+    /* Media query for desktop screens */
+    @media screen and (min-width: 768px) {
+      .brand-container {
+        justify-content: space-between; /* Reduce space between brands on desktop */
+      }
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .footer-text {
+      font-size: 12px;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>AlgoTech Brands</h1>
+    <div class="logo">
+      <img src="algotech-logo.jpeg" alt="AlgoTech Logo">
+    </div>
   </header>
   <div class="brand-container">
     <div class="brand">
-      <a href="https://ftso.au">
-        <img src="ftso-au.png" alt="FTSO AU">
-        <h2>FTSO AU</h2>
-        <p>Songbird and Flare Network Infrastructure Provider.</p>
-      </a>
+      <img src="ftso-au.png" alt="FTSO AU">
+      <h2>FTSO AU</h2>
+      <p>Songbird and Flare Network Infrastructure Provider.</p>
     </div>
     <div class="brand">
-      <a href="https://flaremetrics.io">
-        <img src="flaremetrics.png" alt="Flare Metrics">
-        <h2>FlareMetrics</h2>
-        <p>Accelerating the community. Statistics, news and more.</p>
-      </a>
+      <img src="flaremetrics.png" alt="Flare Metrics">
+      <h2>FlareMetrics</h2>
+      <p>Accelerating the community. Statistics, news and more.</p>
     </div>
     <div class="brand">
-      <a href="https://www.flare.builders">
-        <img src="flarebuilders.png" alt="flare.builders">
-        <h2>flare.builders</h2>
-        <p>The ultimate list of projects building on Songbird and Flare.</p>
-      </a>
+      <img src="flarebuilders.png" alt="Flare Builders">
+      <h2>Flare Builders</h2>
+      <p>The ultimate list of projects building on Songbird and Flare.</p>
     </div>
   </div>
+  <footer>
+    <p class="footer-text">AlgoTech L.L.C-FZ, Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai, U.A.E 500001</p>
+  </footer>
 </body>
 
 </html>
