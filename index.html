@@ -13,7 +13,7 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      min-height: 100vh; /* Ensure the content stretches to at least the full viewport height */
+      min-height: 100vh;
     }
 
     header {
@@ -30,10 +30,10 @@
     .brand-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center; /* Center the brands horizontally */
-      align-items: center; /* Center the brands vertically */
+      justify-content: center;
+      align-items: center;
       padding: 20px;
-      flex-grow: 1; /* Make the brand container flex-grow to fill available space */
+      flex-grow: 1;
     }
 
     .brand {
@@ -43,8 +43,8 @@
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      color: #000; /* Set the text color to black */
-      text-align: center; /* Center justify the content */
+      color: #000;
+      text-align: center;
     }
 
     .brand img {
@@ -53,29 +53,10 @@
     }
 
     .brand-logo {
-      max-width: 80px; /* Set the maximum width for the logo images */
+      max-width: 80px;
     }
 
-    /* Media query for desktop screens */
-    @media screen and (min-width: 768px) {
-      .brand-container {
-        justify-content: space-between; /* Reduce space between brands on desktop */
-      }
-    }
-
-    /* Media query for landscape screens */
-    @media screen and (orientation: landscape) {
-      .brand-container {
-        justify-content: space-around; /* Adjust spacing between brands on landscape */
-      }
-    }
-
-    /* Media query for mobile screens */
-    @media screen and (max-width: 767px) {
-      .brand-container {
-        justify-content: center; /* Center the brands horizontally on mobile view */
-      }
-    }
+    /* Media queries here */
 
     footer {
       background-color: #333;
@@ -86,6 +67,12 @@
 
     .footer-text {
       font-size: 12px;
+    }
+
+    /* Adjust the Contact text and link color */
+    .footer-contact {
+      font-size: 12px;
+      color: white;
     }
 
     /* Remove underline style from hyperlinks */
@@ -127,7 +114,7 @@
   <footer>
     <p class="footer-text">AlgoTech L.L.C-FZ, Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai, U.A.E
       500001</p>
-      <p class="footer-contact">Contact: <a href="mailto:hello@algotech.limited">hello@algotech.limited</a></p>
+    <p class="footer-contact">Contact: <a href="mailto:hello@algotech.limited" style="color: white;">hello@algotech.limited</a></p>
   </footer>
 </body>
 
