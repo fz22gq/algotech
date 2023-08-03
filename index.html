@@ -38,7 +38,7 @@
 
     .brand {
       width: 90%;
-      max-width: 340px;
+      max-width: 380px;
       margin: 10px;
       padding: 20px;
       border: 1px solid #ccc;
@@ -62,6 +62,13 @@
     @media screen and (orientation: landscape) {
       .brand-container {
         justify-content: space-around; /* Adjust spacing between brands on landscape */
+      }
+    }
+
+    /* Media query for mobile screens */
+    @media screen and (max-width: 767px) {
+      .brand-container {
+        justify-content: center; /* Center the brands vertically on mobile view */
       }
     }
 
