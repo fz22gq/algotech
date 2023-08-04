@@ -98,6 +98,19 @@
       text-decoration: none;
     }
 
+    /* Add link styles for the brand containers */
+    .brand-link {
+      text-decoration: none;
+      color: inherit; /* Use the parent element's color for text */
+    }
+
+    /* Add media query for smaller screens */
+    @media (max-width: 768px) {
+      .brand-with-logo {
+        justify-content: center; /* Center the brand containers on smaller screens */
+      }
+    }
+
     .brand-with-logo {
       display: flex;
       flex-direction: column;
@@ -115,31 +128,31 @@
   </header>
   <div class="brand-container">
     <a href="https://ftso.au" class="brand-link">
-    <div class="brand-with-logo">
-      <div class="brand">
-        <img src="ftso-au.png" alt="FTSO AU">
-        <p>Songbird and Flare Network Infrastructure Provider, since 2021</p>
+      <div class="brand-with-logo">
+        <div class="brand">
+          <img src="ftso-au.png" alt="FTSO AU">
+          <p>Songbird and Flare Network Infrastructure Provider, since 2021</p>
+        </div>
+        <div class="brand-logo" style="background-image: url('ftso_au-logo.svg');"></div>
       </div>
-      <div class="brand-logo" style="background-image: url('ftso_au-logo.svg');"></div>
-    </div>
     </a>
-    <div class="brand-with-logo">
     <a href="https://flaremetrics.io" class="brand-link">
-      <div class="brand">
-        <img src="flaremetrics.png" alt="Flare Metrics">
-        <p>Accelerating the Community. Statistics, News and More</p>
+      <div class="brand-with-logo">
+        <div class="brand">
+          <img src="flaremetrics.png" alt="Flare Metrics">
+          <p>Accelerating the Community. Statistics, News and More</p>
+        </div>
+        <div class="brand-logo" style="background-image: url('flaremetrics-logo.svg');"></div>
       </div>
-      <div class="brand-logo" style="background-image: url('flaremetrics-logo.svg');"></div>
-    </div>
     </a>
-    <div class="brand-with-logo">
-    <a href="https://www.flare.builders" class="brand-link">  
-      <div class="brand">
-        <img src="flarebuilders.png" alt="Flare Builders">
-        <p>The Ultimate List of Projects Building on Songbird and Flare</p>
+    <a href="https://www.flare.builders" class="brand-link">
+      <div class="brand-with-logo">
+        <div class="brand">
+          <img src="flarebuilders.png" alt="Flare Builders">
+          <p>The Ultimate List of Projects Building on Songbird and Flare</p>
+        </div>
+        <div class="brand-logo" style="background-image: url('flare-builders-logo.svg');"></div>
       </div>
-      <div class="brand-logo" style="background-image: url('flare-builders-logo.svg');"></div>
-    </div>
     </a>
   </div>
   <footer>
