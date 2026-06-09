@@ -1,165 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="color-scheme" content="dark">
   <title>AlgoTech LLC-FZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* Define the opacity variable */
     :root {
-      --brand-opacity: 0.4; /* Adjust the opacity value (0.0 to 1.0) */
+      --bg: #0b0f14;
+      --surface: #141a22;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --border-hover: #334155;
+      --accent: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.28);
+      --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.24), 0 16px 40px rgba(0, 0, 0, 0.36);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       margin: 0;
-      padding: 0;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
     header {
-      background-color: #fff;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
+      padding: 4.5rem 0 3rem;
     }
 
-    .logo img {
-      max-width: 100px;
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
     }
 
-    .brand-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      flex-grow: 1;
+    header h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
     }
 
-    .brand {
+    header .lead {
+      margin: 1rem 0 0;
+      max-width: 36rem;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    main {
+      flex: 1;
+      padding-bottom: 4rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .product {
       position: relative;
-      width: 90%;
-      max-width: 380px;
-      height: 300px;
-      margin: 10px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      color: #000;
-      text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      opacity: var(--brand-opacity); /* Use the opacity variable here */
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .brand img {
-      max-width: 100%;
-      height: auto;
+    .product:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-hover);
     }
 
-    .brand-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: 300px; /* Set the max width of the .svg file */
-      background-repeat: no-repeat;
-      background-position: center;
+    .product-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.875rem;
     }
 
-    /* Media queries here */
+    .product h2 {
+      margin: 0;
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    .product-arrow {
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .product:hover .product-arrow {
+      transform: translate(2px, -2px);
+      color: var(--accent);
+    }
+
+    .product p {
+      margin: 0;
+      flex: 1;
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    .product .url {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+    }
 
     footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      padding: 2rem 0;
     }
 
-    .footer-text {
-      font-size: 12px;
-    }
-
-    /* Adjust the Contact text and link color */
-    .footer-contact {
-      font-size: 12px;
-      color: white;
-    }
-
-    /* Remove underline style from hyperlinks */
-    .brand-link {
-      text-decoration: none;
-    }
-
-    /* Add link styles for the brand containers */
-    .brand-link {
-      text-decoration: none;
-      color: inherit; /* Use the parent element's color for text */
-    }
-
-    /* Add media query for smaller screens */
-    @media (max-width: 768px) {
-      .brand-with-logo {
-        justify-content: center; /* Center the brand containers on smaller screens */
-      }
-    }
-
-    .brand-with-logo {
+    .footer-inner {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      position: relative;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+
+    footer a:hover,
+    .email-link:hover,
+    .email-link:focus-visible {
+      border-bottom-color: var(--text-muted);
+    }
+
+    .email-link {
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 3rem 0 2rem;
+      }
+
+      .product {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <div class="logo">
-      <img src="algotech-logo.jpeg" alt="AlgoTech Logo">
+    <div class="container">
+      <p class="eyebrow">AlgoTech L.L.C-FZ</p>
+      <h1>Portfolio</h1>
+      <p class="lead">Infrastructure and community tools for the Songbird and Flare ecosystem.</p>
     </div>
   </header>
-  <div class="brand-container">
-    <a href="https://ftso.au" class="brand-link">
-      <div class="brand-with-logo">
-        <div class="brand">
-          <img src="ftso-au.png" alt="FTSO AU">
-          <p>Songbird and Flare Network Infrastructure Provider, since 2021</p>
-        </div>
-        <div class="brand-logo" style="background-image: url('ftso_au-logo.svg');"></div>
-      </div>
-    </a>
-    <a href="https://flaremetrics.io" class="brand-link">
-      <div class="brand-with-logo">
-        <div class="brand">
-          <img src="flaremetrics.png" alt="Flare Metrics">
-          <p>Accelerating the Community. Statistics, News and More</p>
-        </div>
-        <div class="brand-logo" style="background-image: url('flaremetrics-logo.svg');"></div>
-      </div>
-    </a>
-    <a href="https://www.flare.builders" class="brand-link">
-      <div class="brand-with-logo">
-        <div class="brand">
-          <img src="flarebuilders.png" alt="Flare Builders">
-          <p>The Ultimate List of Projects Building on Songbird and Flare</p>
-        </div>
-        <div class="brand-logo" style="background-image: url('flare-builders-logo.svg');"></div>
-      </div>
-    </a>
-  </div>
-  <footer>
-    <p class="footer-text">AlgoTech L.L.C-FZ, Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai, U.A.E
-      500001</p>
-    <p class="footer-contact">Contact: <a href="mailto:hello@algotech.limited" style="color: white;">hello@algotech.limited</a></p>
-  </footer>
-</body>
 
+  <main>
+    <div class="container">
+      <div class="products">
+        <a class="product" href="https://au.cc">
+          <div class="product-header">
+            <h2>AU.CC</h2>
+            <svg class="product-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p>Songbird and Flare Network infrastructure provider, since 2021.</p>
+          <span class="url">au.cc</span>
+        </a>
+
+        <a class="product" href="https://flaremetrics.io">
+          <div class="product-header">
+            <h2>Flare Metrics</h2>
+            <svg class="product-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p>Accelerating the community. Statistics, news, and more.</p>
+          <span class="url">flaremetrics.io</span>
+        </a>
+
+        <a class="product" href="https://www.flare.builders">
+          <div class="product-header">
+            <h2>Flare Builders</h2>
+            <svg class="product-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p>The ultimate list of projects building on Songbird and Flare.</p>
+          <span class="url">flare.builders</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>AlgoTech L.L.C-FZ, Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai, U.A.E 500001</p>
+      <p>Contact: <button type="button" class="email-link" data-u="hello" data-d="algotech.limited">hello · algotech · limited</button></p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var link = document.querySelector('.email-link');
+      if (!link) return;
+
+      var masked = link.textContent.trim();
+
+      function reveal() {
+        link.textContent = link.dataset.u + '@' + link.dataset.d;
+      }
+
+      function mask() {
+        link.textContent = masked;
+      }
+
+      link.addEventListener('mouseenter', reveal);
+      link.addEventListener('mouseleave', mask);
+      link.addEventListener('focus', reveal);
+      link.addEventListener('blur', mask);
+      link.addEventListener('click', function () {
+        window.location.href = 'mailto:' + link.dataset.u + '@' + link.dataset.d;
+      });
+    })();
+  </script>
+</body>
 </html>
